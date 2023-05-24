@@ -12,24 +12,21 @@ class Node {
  * LinkedList
  */
 public class LinkedList {
+    static Node head;
 
     public static void main(String[] args) {
-        Node head = new Node(0);
-        Node node = head;
+        head = null; // empty list
 
-        for (int i = 1; i < 5; i++) {
-            Node newNode = new Node(i);
-            node.next = newNode;
-            node = newNode;
-        }
+        Node node1 = new Node(2); // create a node
+        // Node node2 = new Node(4);
 
-        // head.next = node1;
-        // node1.next = node2;
-        // node2.next = null;
-        Node current = head;
-        while (current != null) {
-            System.out.println(current.data);
-            current = current.next;
+        node1.next = head; 
+        head = node1;
+
+        while (head != null) {
+            System.out.print(head.data + " -> ");
+            head = head.next;
         }
+        System.out.print(head);
     }
 }
